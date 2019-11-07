@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
   if (result === undefined) {
     res.render('login', { error })
   } else {
-    let userName = result.firstName
+    const userName = result.firstName
     res.render('home', { userName })
   }
 
