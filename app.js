@@ -31,8 +31,11 @@ app.post('/', (req, res) => {
     const userName = result.firstName
     res.render('home', { userName })
   }
-
 })
+
+app.get('/logout', function (req, res) {
+  res.redirect('/')
+});
 
 // starts the express server and listening for connections.
 app.listen(port, () => {
