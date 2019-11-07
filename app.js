@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   const userInput = req.body
   const result = userCheck(userInput)
-  let error = 'Username/Password 錯誤'
+  const error = 'Username/Password 錯誤'
   if (result === undefined) {
     res.render('login', { error })
   } else {
