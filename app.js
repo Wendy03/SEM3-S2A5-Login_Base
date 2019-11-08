@@ -18,7 +18,7 @@ app.use(express.static('public'))
 
 // setting routes
 app.get('/', (req, res) => {
-  res.render('login')
+  res.render('login', { style: 'login.css' })
 })
 
 app.post('/', (req, res) => {
@@ -26,10 +26,16 @@ app.post('/', (req, res) => {
   const result = userCheck(userInput)
   const error = 'Username/Password 錯誤'
   if (result === undefined) {
-    res.render('login', { error })
+    res.render('login', {
+      style: 'login.css',
+      error
+    })
   } else {
     const userName = result.firstName
-    res.render('home', { userName })
+    res.render('home', {
+      style: 'home.css',
+      userName
+    })
   }
 })
 
